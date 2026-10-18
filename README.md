@@ -84,11 +84,6 @@ Statistiques descriptives, test t, test du Khi-deux et régression logistique, a
 
 Ce résultat est **cohérent avec la nature des données** : elles sont tirées au hasard, sans lien construit entre ces variables. L'intérêt du projet est de montrer une chaîne d'analyse rigoureuse, qui sait aussi conclure à l'absence d'effet.
 
-## Aperçu
-
-![Tableau de bord PharmaCorp — synthèse](captures/powerbi_page1_synthese.png)
-
-![Tableau de bord PharmaCorp — signalements](captures/powerbi_page2_signalements.png)
 
 ## Structure du repository
 
@@ -97,7 +92,7 @@ Ce résultat est **cohérent avec la nature des données** : elles sont tirées 
 ├── sql/          scripts de création, nettoyage, analyse et exports
 ├── powerbi/      tableau de bord (.pbix)
 ├── excel/        reporting complémentaire (.xlsx)
-├── r/            script, rapport R Markdown et figures
+├── r/            script, rapport R Markdown, application shiny et figures
 └── captures/     captures d'écran des livrables
 ```
 
@@ -105,7 +100,7 @@ Ce résultat est **cohérent avec la nature des données** : elles sont tirées 
 
 1. Créer une base PostgreSQL `pharmacorp`, puis exécuter dans l'ordre `sql/01_creation_tables.sql`, l'import des CSV, `sql/02_nettoyage.sql` et `sql/03_analyse.sql`.
 2. Ouvrir `powerbi/pharmacorp_dashboard.pbix` et mettre à jour la source de données vers votre base locale.
-3. Exporter la requête de jointure vers `r/ventes_signalements.csv`, puis ouvrir `r/rapport_pharmacorp.Rmd` dans RStudio et cliquer sur **Knit**.
+3. Exporter la requête de jointure vers `r/ventes_signalements.csv`, puis ouvrir `r/rapport_pharmacorp.Rmd` dans RStudio et cliquer sur **Knit**, faites la même chose pour les autres Rmd pour explorer l'application shiny
 
 ## Limites
 
@@ -115,8 +110,9 @@ Ce résultat est **cohérent avec la nature des données** : elles sont tirées 
 
 ## Outils
 
-PostgreSQL · SQL · Power BI · DAX · Power Query · Excel · R · tidyverse · ggplot2 · R Markdown
+PostgreSQL - SQL - Power BI - DAX - Power Query - Excel - R - tidyverse - ggplot2 - R Markdown - shiny
 
 ## Auteur
 
-**Votre nom** — [LinkedIn](https://www.linkedin.com/) · [Email](mailto:votre.email@exemple.com)
+SABIBA Beyn-yagui Crédo [Email](sabibacredo@gmail.com)
+
