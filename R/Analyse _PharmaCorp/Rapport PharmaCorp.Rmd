@@ -1,0 +1,46 @@
+---
+title: "Analyse des signalement : PharmaCorp"
+author: "SABIBA Crédo"
+date: "2026-09-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(tidyverse)
+signalements <- read_csv("ventes_signalements.csv") %>%
+  mutate(
+    gravite = factor(gravite, levels = c("Légère", "Modérée", "Grave"),
+                     ordered = TRUE),
+    est_grave = ifelse(gravite == "Grave", 1, 0)
+  )
+```
+
+## Contexte
+
+Cette analyse porte sur les signalements de pharmacovigilance de la chaîne
+PharmaCorp, afin d'identifier les facteurs associés à un signalement grave.
+
+## Statistiques descriptives
+
+```{r}
+summary(signalements$age_patient)
+```
+
+## Test statistique : âge selon la gravité
+
+```{r}
+t.test(age_patient ~ est_grave, data = signalements)
+```
+
+## Modèle de régression logistique
+
+```{r}
+modele <- glm(est_grave ~ age_patient + sexe + categorie,
+              data = signalements, family = binomial)
+exp(coef(modele))
+```
+
+## Conclusion
+
+(Rédigez ici 3 à 4 phrases qui résument vos résultats.)

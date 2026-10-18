@@ -1,0 +1,85 @@
+---
+title: "AppPharmaCo"
+author: "SABIBA Crédo"
+date: "2026-10-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(tidyverse)
+library(broom)
+
+# Chargement et préparation des données
+signalements <- read_csv("ventes_signalements.csv") %>%
+  mutate(
+    gravite = factor(gravite, levels = c("Légère", "Modérée", "Grave"), ordered = TRUE),
+    est_grave = ifelse(gravite == "Grave", 1, 0),
+    sexe = factor(sexe)
+  )
+```
+
+
+## Introduction
+Ce document présente le rapport d'analyse automatisé des données de signalements de PharmaCorp.
+
+## 1. Statistiques Descriptives
+Voici la répartition des cas selon leur niveau de gravité :
+
+```{r description, echo=FALSE}
+signalements %>%
+  count(gravite) %>%
+  mutate(pct = round(n / sum(n) * 100, 1)) %>%
+  knitr::kable(col.names = c("Gravité", "Nombre de cas", "Pourcentage (%)"))
+```
+
+## 2. Visualisations Graphiques
+
+### Distribution de l'âge des patients
+
+```{r graphique1, echo=FALSE, fig.width=7, fig.height=4}
+ggplot(signalements, aes(x = age_patient)) +
+  geom_histogram(bins = 20, fill = "#2E7D6B", color = "white") +
+  labs(title = "Distribution de l'âge des patients concernés", x = "Âge (années)", y = "Effectif") +
+  theme_minimal()
+```
+
+
+### Âge selon la gravité du signalement
+
+```{r graphique2, echo=FALSE, fig.width=7, fig.height=4}
+ggplot(signalements, aes(x = gravite, y = age_patient, fill = gravite)) +
+  geom_boxplot() +
+  labs(title = "Âge selon la gravité du signalement", x = "Gravité", y = "Âge (années)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## 3. Tests Statistiques
+
+### Test de normalité de Shapiro-Wilk
+
+```{r shapiro, echo=TRUE}
+shapiro.test(signalements$age_patient)
+```
+
+### Test t de Student (Âge selon le caractère Grave)
+
+```{r ttest, echo=TRUE}
+t.test(age_patient ~ est_grave, data = signalements)
+```
+
+## 4. Modélisation (Régression logistique)
+Voici les résultats de notre modèle de régression logistique globale :
+
+```{r modele, echo=FALSE}
+modele <- glm(est_grave ~ age_patient + sexe + categorie, data = signalements, family = binomial)
+
+tidy(modele) %>%
+  rename(Variable = term, Coefficient = estimate, Erreur_Type = std.error, Statistique_z = statistic, P_value = p.value) %>%
+  knitr::kable(digits = 4)
+```
+
+
+
+
