@@ -114,5 +114,5 @@ PostgreSQL - SQL - Power BI - DAX - Power Query - Excel - R - tidyverse - ggplot
 
 ## Auteur
 
-SABIBA Beyn-yagui Crédo [Email](sabibacredo@gmail.com)
+SABIBA Beyn-yagui Crédo [(sabibacredo@gmail.com)]
 
