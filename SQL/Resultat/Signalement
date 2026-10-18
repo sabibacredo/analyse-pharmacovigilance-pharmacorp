@@ -1,0 +1,61 @@
+"nom_produit","gravite","nb"
+"Amlodipine 5mg","Grave",7
+"Amlodipine 5mg","Légère",81
+"Amlodipine 5mg","Modérée",48
+"Amoxicilline 500mg","Grave",13
+"Amoxicilline 500mg","Légère",75
+"Amoxicilline 500mg","Modérée",49
+"Atorvastatine 20mg","Grave",15
+"Atorvastatine 20mg","Légère",77
+"Atorvastatine 20mg","Modérée",50
+"Azithromycine 250mg","Grave",10
+"Azithromycine 250mg","Légère",73
+"Azithromycine 250mg","Modérée",65
+"Ciprofloxacine 500mg","Grave",21
+"Ciprofloxacine 500mg","Légère",86
+"Ciprofloxacine 500mg","Modérée",46
+"Diclofénac 50mg","Grave",21
+"Diclofénac 50mg","Légère",95
+"Diclofénac 50mg","Modérée",58
+"Fer + Acide Folique","Grave",19
+"Fer + Acide Folique","Légère",79
+"Fer + Acide Folique","Modérée",57
+"Glibenclamide 5mg","Grave",18
+"Glibenclamide 5mg","Légère",89
+"Glibenclamide 5mg","Modérée",48
+"Ibuprofène 400mg","Grave",18
+"Ibuprofène 400mg","Légère",87
+"Ibuprofène 400mg","Modérée",47
+"Insuline NPH","Grave",15
+"Insuline NPH","Légère",86
+"Insuline NPH","Modérée",48
+"Losartan 50mg","Grave",14
+"Losartan 50mg","Légère",85
+"Losartan 50mg","Modérée",58
+"Metformine 850mg","Grave",16
+"Metformine 850mg","Légère",83
+"Metformine 850mg","Modérée",41
+"Oméprazole 20mg","Grave",15
+"Oméprazole 20mg","Légère",91
+"Oméprazole 20mg","Modérée",46
+"Paracétamol 1000mg","Grave",12
+"Paracétamol 1000mg","Légère",74
+"Paracétamol 1000mg","Modérée",64
+"Ranitidine 150mg","Grave",13
+"Ranitidine 150mg","Légère",91
+"Ranitidine 150mg","Modérée",49
+"Salbutamol Spray","Grave",17
+"Salbutamol Spray","Légère",80
+"Salbutamol Spray","Modérée",53
+"Tramadol 50mg","Grave",17
+"Tramadol 50mg","Légère",90
+"Tramadol 50mg","Modérée",49
+"Vitamine C 500mg","Grave",11
+"Vitamine C 500mg","Légère",85
+"Vitamine C 500mg","Modérée",38
+"Vitamine D3","Grave",17
+"Vitamine D3","Légère",78
+"Vitamine D3","Modérée",50
+"Warfarine 5mg","Grave",18
+"Warfarine 5mg","Légère",89
+"Warfarine 5mg","Modérée",55
